@@ -35,5 +35,10 @@ public class IntToEngTest {
 		 String s = IntToEng.translateEng(532);
 		 assertEquals("five hundred and thirty-two", s);
 	 }
+	 @Test
+	 public void きゅうひゃく(){
+		 String s = IntToEng.translateEng(900);
+		 assertEquals("nine hundred", s);
+	 }
 
 }

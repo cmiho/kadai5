@@ -30,14 +30,14 @@ public class IntToEng {
 		
 		if (0 <= n && n < 10)
 			answer = digit[n];
-		else if (n % 10 == 0)
+		else if (n % 10 == 0 && n < 100)
 			answer = exactly[n / 10];
 		else if (10 < n && n < 20)
 			answer = teen[n - 10];
 		else if(0 < n && n < 100)
 			answer = exactly[n/10] +"-" + digit[n%10];
 		else if(n > 100 && n < 1000)
-			answer = digit[n/100] +" hundred and "+ doubleDigit(n - ((n/100) * 100));
+			answer = digit[n/100] +" hundred"+ doubleDigit(n - ((n/100) * 100));
 		
 		
 		
@@ -51,15 +51,21 @@ public class IntToEng {
 		return answer;
 	}
 	static String doubleDigit(int n){
-		String answer = "";
+		String answer = " and ";
+		if(n == 0){
+			answer = "";
+		} else {
+		
 		if (0 <= n && n < 10)
-			answer = digit[n];
+			answer += digit[n];
 		else if (n % 10 == 0)
-			answer = exactly[n / 10];
+			answer += exactly[n / 10];
 		else if (10 < n && n < 20)
-			answer = teen[n - 10];
+			answer += teen[n - 10];
 		else if(0 < n && n < 100)
-			answer = exactly[n/10] +"-" + digit[n%10];
+			answer += exactly[n/10] +"-" + digit[n%10];
+		}
 		return answer;
 	}
+		
 }
