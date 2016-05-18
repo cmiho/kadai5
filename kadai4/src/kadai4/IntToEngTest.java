@@ -40,5 +40,29 @@ public class IntToEngTest {
 		 String s = IntToEng.translateEng(900);
 		 assertEquals("nine hundred", s);
 	 }
-
+	 @Test
+	 public void ごひゃくに(){
+		 String s = IntToEng.translateEng(502);
+		 assertEquals("five hundred and two", s);
+	 }
+	 @Test
+	 public void さんびゃくじゅういち(){
+		 String s = IntToEng.translateEng(311);
+		 assertEquals("three hundred and eleven", s);
+	 }
+	 @Test
+	 public void せん(){
+		 String s = IntToEng.translateEng(1000);
+		 assertEquals("thousand", s);
+	 }
+	 @Test
+	 public void せんさんびゃくさんじゅうご(){
+		 String s = IntToEng.translateEng(1335);
+		 assertEquals("one thousand and three hundred and thirty-five", s);
+	 }
+	 @Test
+	 public void せんご(){
+		 String s = IntToEng.translateEng(1005);
+		 assertEquals("one thousand and five", s);
+	 }
 }

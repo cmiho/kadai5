@@ -38,18 +38,36 @@ public class IntToEng {
 			answer = exactly[n/10] +"-" + digit[n%10];
 		else if(n > 100 && n < 1000)
 			answer = digit[n/100] +" hundred"+ doubleDigit(n - ((n/100) * 100));
-		
-		
-		
-		
-		/*else if(n == 1000)
+		else if(n == 1000)
 			answer = "thousand";
 		else if(n > 1000 && n < 10000)
-			answer = digit[n/1000] +" thousand and "+ digit[n/100] +" hundred and "+*/
+			answer = digit[n/1000] +" thousand"+ makehundred((n-((n/1000)*1000)));
+		/*digit[(n-((n/1000)*1000))/100] +" hundred"+doubleDigit(n - ((n/100) * 100));*/
 		
 
 		return answer;
 	}
+	static String makehundred(int n){
+		String answer = " and ";
+		if(n == 0){
+			answer = "";
+		} else {
+		
+		if (0 <= n && n < 10)
+			answer += digit[n];
+		else if (n % 10 == 0)
+			answer += exactly[n / 10];
+		else if (10 < n && n < 20)
+			answer += teen[n - 10];
+		else if(0 < n && n < 100)
+			answer += exactly[n/10] +"-" + digit[n%10];
+		else if(100<n && n<1000)
+			answer += digit[n/100] +" hundred"+doubleDigit(n - ((n/100) * 100));
+		}
+		
+		return answer;
+	}
+	
 	static String doubleDigit(int n){
 		String answer = " and ";
 		if(n == 0){
