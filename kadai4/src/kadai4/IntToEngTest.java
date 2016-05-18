@@ -65,10 +65,10 @@ public class IntToEngTest {
 		 String s = IntToEng.translateEng(1005);
 		 assertEquals("one thousand and five", s);
 	 }
-	 @Test
+	 /*@Test
 	 public void にせんさんびゃく(){
 		 String s = IntToEng.translateEng(2300);
 		 assertEquals("two thousand and three hundred", s);
-	 }
+	 }*/
 
 }
