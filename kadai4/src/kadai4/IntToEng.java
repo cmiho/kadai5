@@ -41,13 +41,13 @@ public class IntToEng {
 		else if(n == 1000)
 			answer = "thousand";
 		else if(n > 1000 && n < 10000)
-			answer = digit[n/1000] +" thousand"+ makehundred((n-((n/1000)*1000)));
+			answer = digit[n/1000] +" thousand"+ makeHundred((n-((n/1000)*1000)));
 		/*digit[(n-((n/1000)*1000))/100] +" hundred"+doubleDigit(n - ((n/100) * 100));*/
 		
 
 		return answer;
 	}
-	static String makehundred(int n){
+	static String makeHundred(int n){
 		String answer = " and ";
 		if(n == 0){
 			answer = "";
